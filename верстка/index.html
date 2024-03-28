@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alias</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    
+    <div class="container">
+
+        <div class="page__main"> 
+        <div class="home"> 
+            <div class="home__img">
+                <img class="logo" src="../макет/alias-logo-1.png" alt="logo">
+            </div>
+            
+            <div class="nav">
+                <ul>
+                    <li class="btn  btn__nav"><Link to="/">Новая игра</Link></li>
+                    <li class="btn  btn__nav"><Link to="/">Настройки</Link></li>
+                    <li class="btn  btn__nav"><Link to="/">Правила</Link></li>
+                </ul>
+            </div>
+        </div> 
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="page__rules">
+            <div class="home">
+                <div class="rules__head">
+                    <button class="btn__back"></button>
+                    <h2>Правила</h2>
+                </div>
+                
+                <div class="rules__text">
+                    <p>
+                        <h3>Alias: Скажи иначе</h3>
+                        В игру играют командами из двух или более человек. Задача каждого игрока команды - объяснить как можно больше слов отображаемых на экране за ограниченное время другими словами, используя, например, синонимы, антонимы и подсказки так, чтобы члены вашей команды смогли отгадать как можно больше слов прежде чем истечет время. Чем больше слов отгадала команда, тем больше она заработает баллов.
+                    <h3 >Объяснение слов </h3> 
+                        При объяснении слов нельзя упоминать какую-либо часть слова. Например, слово «кофеварка» нельзя объяснять как «аппарат для варки кофе». Правильный способ объяснения будет следующий: «аппарат для
+                        приготовления крепкого напитка, который обычно пьют за завтраком». Можно использовать синонимы - то
+                        есть вы можете сказать «кипятить», но не «варить».
+                        Вы можете использовать антонимы. Слово «большой» может быть объяснено как «антоним слова маленький». Вы не можете
+                        использовать иностранные языки, за исключением тех случаев, когда все игроки согласились с этим.
+                        Отгаданное слово должно точно совпадать. Объясняющий игрок помогает отгадывающим найти правильную форму слова. Если слово состоит из двух частей и кто-то отгадывает первую часть, вы потом можете использовать эту часть слова в дальнейшем объяснении.
+                        <h3>Начисление очков</h3>
+                        За каждое отгаданное слово команда получает одно очко, а за пропущенное или отгаданное с нарушением - штрафуется (в зависимости от настроек).
+                        Если объясняющий игрок допускает ошибку - например, называет часть слова, указанного в карточке, слово не будет принято и команда потеряет 1 очко. Поэтому каждая команда должна внимательно слушать объяснения других команд. Если слово кажется слишком тяжелым, вы можете его пропустить, но помните, что за это вы
+                        потеряете очки. Однако, иногда это того стоит, так как вы можете сэкономить время.
+                        "Последнее слово для всех" - если
+                        включена эта опция, по истечении времени раунда, слово могут отгадывать все команды. В этом случае 1 очко получит команда отгадавшее
+                        слово.
+                        Победителем считается команда, набравшая необходимое для победы количество очков. Если на момент завершения победного раунда у команд одинаковое количество очков - проводиться дополнительный раунд (Овертайм).
+                        <h3>Самое важное</h3>
+                        Это игра для вечеринки, и не стоит принимать правила слишком всерьез! Договоритесь между собой о том, насколько гибкими могут быть правила.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="page__setting">
+            <div class="home">
+
+                <div class="settings__head">
+                    <button class="btn__back"></button>
+                    <h2>Настройки</h2>
+                </div>
+    
+                <section class="setting__words">
+                    <div class="setting__words__top">
+                        <div class="setting__words__text">                   
+                            <h3>Количество слов</h3> 
+                            <p>для победы</p>
+                        </div>
+                        <div class="setting__words__quantity">20</div>
+                    </div>
+    
+                    <div class="setting__words__bottom">
+                        <button class="btn btn__set"> - 10 слов</button>
+                        <button class="btn btn__set"> + 10 слов</button>
+                    </div>
+                </section>
+    
+    
+                <section class="setting__time">
+                    <div class="setting__time__top">
+                        <div class="setting__time__text">
+                            <h3>Длина раунда</h3> 
+                            <p>на отгадывание слов</p>
+                        </div>
+                        <div class="setting__time__quantity">30</div>
+                    </div>
+                    <div class="setting__time__bottom">
+                        <button class="btn  btn__set"> - 30 сек</button>
+                    <button class="btn btn__set"> + 30 сек</button>
+                    </div>
+                </section>
+    
+    
+                <section class="setting__last_word"> 
+                    <div class="setting__last_word__text">
+                        <h3>Последнее слово</h3> 
+                        <p>могут отгадывать все команды</p>
+                    </div>
+    
+                    <label class="switch"> 
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </section>
+    
+                <section class="setting__fine"> 
+                    <div class="setting__last_word__text">
+                        <h3>Штраф</h3> 
+                        <p>за пропущенные слова</p>
+                    </div>
+    
+                    <label class="switch"> 
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </section>
+
+            </div>    
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="page__teams">
+
+            <div class="home">
+                <div class="teams__head">
+                    <button class="btn__back"></button>
+                    <h2>Команды</h2>
+                </div>
+
+                <ul class="teams__list">
+                    <li class="teams__date">
+                        <div class="teams__name">
+                            <h3>Команда 1</h3> 
+                        </div>
+
+                        <button class="btn__circle no"></button> 
+                    </li>
+
+                    <li class="teams__date">
+                        <div class="teams__name">
+                            <h3>Команда 2</h3> 
+                        </div>
+
+                        <button class="btn__circle no"></button> 
+                    </li>
+                    
+                </ul>
+
+                <div class="nav teams">
+                    <ul>
+                        <li class="btn  btn__teams"><Link to="/">Добавить команду</Link></li>
+                        <li class="btn  btn__teams"><Link to="/">Дальше</Link></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty"></div>
+
+        <div class="page__team__name">
+            <div class="home">
+                <div class="team__name__form">
+                    
+                        <h3>Enter Your Team Name</h3>
+                        <input type="text" placeholder="Team Name">
+                        <div class="two__btn">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="empty"></div>
+
+
+        <div class="page__words_collection"></div>
+        <div class="page__common_word"></div>
+        <div class="page__game_process"></div>
+        <div class="page__score_total"></div>
+        <div class="page__score_round"></div>
+
+
+
+
+
+    </div>
+
+
+</body>
+</html>
