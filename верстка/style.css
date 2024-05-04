@@ -20,16 +20,14 @@
   );
   width: 100%;
   height: 100%;
+  /* height: 100vh; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+}
 
-  /* position: fixed;
-    top: 0;
-    left: 0;
-    
-    z-index: -1; */
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /* color: #ffffff; */
-    font-size: 18px;
-
+.page__rules .home,
+.page__world_collection .home{
+  padding-bottom: 20px;
 }
 
 .container {
@@ -44,7 +42,14 @@ ul {
 }
 
 li {
-  color: wheat;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+
 }
 
 .home__img {
@@ -99,7 +104,10 @@ li {
 
 .settings__head,
 .rules__head,
-.teams__head{ 
+.teams__head,
+.world_collection__head,
+.score_begin__head,
+.game_process__head{ 
     display: flex;
     padding: 30px 0;
     position: relative;
@@ -134,10 +142,12 @@ h2 {
   
 }
 
-.rules__text{
+.rules__text, .world_collection__set, 
+.game_process__main,
+.game_process__back1,
+.game_process__back2 {
     width: 90%;
     margin: auto;
-    margin-bottom: 50px;
     background-color: #ffffff;
     border: 5px solid rgb(79, 73, 73);
     border-radius: 20px;
@@ -159,8 +169,13 @@ h2 {
     padding-bottom: 10px;
 }
 
-.setting__words__top, .setting__words__bottom, .setting__time__top, .setting__time__bottom,
-.setting__last_word, .setting__fine {
+.setting__words__top, 
+.setting__words__bottom, 
+.setting__time__top, 
+.setting__time__bottom,
+.setting__last_word, 
+.setting__fine,
+.score_begin__total {
     display: flex;
     justify-content: space-between;
     padding: 20px 10px 10px 10px;
@@ -170,7 +185,9 @@ h2 {
     padding: 20px 10px 30px 10px;
 }
 
-.setting__words__text, .setting__time__text {
+.setting__words__text, 
+.setting__time__text,
+.score_begin__team {
     font-size: 20px;
 }
 
@@ -187,8 +204,6 @@ h2 {
     cursor: pointer;
     margin: 0;
 }
-
-
 
 
 .switch {
@@ -241,18 +256,19 @@ h2 {
     color: #6f5d5d;
 }
 
-/* page teams*/
-.btn__teams{
-    display: inline;
-}
-.btn__teams:first-child {
-    font-size: 20px;
+.btn__teams {
+    font-size: 25px;
     height: 70px;
     padding: 20px 20px;
 }
+#add_team{
+  font-size: 20px;
+}
 
+/* page teams*/
 .teams__list{
     min-height: 300px;
+    font-size: 22px;
 }
 
 .teams__date{
@@ -262,11 +278,11 @@ h2 {
     padding: 10px 20px;
 }
 
-.btn__circle {
+.btn__circle_no, .btn__circle_yes{
     width: 40px;
     height: 40px;
     background-color: #ff0000;
-    border: #000 1px solid;
+    border: darkred 2px solid;
     border-radius: 50%;
     display:block;
     justify-content: center;
@@ -274,34 +290,306 @@ h2 {
     cursor: pointer;
   }
   
- .btn__circle:before {
+ .btn__circle_no:before {
     content: '\2716'; 
     font-size: 20px;
     color: #fff;
     }
 
-.btn__circle:active {
+.btn__circle_no:active {
     box-shadow: 0px 0px 15px #3d3535;
-    background-color: #fd2828;
+    background-color: #e71515;
 }
 
 /* page team name*/
 
-.page__team__name .home{
-    padding: 20px 5px;
-}
-
-.team__name__form{
+.team__name__form,
+.cancel__form {
     width: 90%;
-    height: 200px;
     border: 4px solid rgb(212, 212, 32);
     background-color: #fff;
     border-radius: 20px;
     margin:  40px auto;
+    padding: 20px 20px 40px 20px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.team__name__form h3{
+  text-align: center;
+  font-size: 20px;
+}
+
+.team__name__input{
+  width: 90%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.two__btn{
+  position: absolute;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.two__btn .btn__circle_no{
+  width: 80px;
+  height: 80px;
+}
+
+.two__btn .btn__circle_no:before {
+  font-size: 40px;
+  }
+
+.two__btn .btn__circle_yes{
+  width: 80px;
+  height: 80px;
+  background-color: green;
+  border: darkgreen 2px solid;
+}
+  
+.two__btn .btn__circle_yes:before {
+  font-size: 40px;
+  content: '\2714';
+  color: #fff;
+}
+
+.btn__circle_yes:active {
+    box-shadow: 0px 0px 15px #3d3535;
+    background-color: rgb(11, 109, 11);
+}
+
+/* page worlds_collektion*/
+.world_collection__set{
+  padding: 10px 20px;
+}
+
+.world_collection__list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.world_collection__choice{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px 10px 0px;
+}
+
+.world_collection__quantity,
+.score_begin__quantity {
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.world_collection__quantity p:last-child,
+.score_begin__quantity p:last-child {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* page score_begin*/
+.score_begin__total{
+  padding: 10px 20px;
+}
+
+.score_begin__footer,
+.score_begin__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+
+.score_begin__button{
+  padding-bottom: 30px;
+}
+
+/* page game_process*/
+.game_process__head .btn__back{
+    top: 35px;
+}
+
+.time{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.time p:first-child{
+font-size: 60px;
+}
+
+.time p:last-child{
+font-size: 16px;
+}
+
+.cards{
+  position: relative;
+  height: 250px;
+}
+
+.game_process__main{
+  height: 250px;
+  position: absolute;
+  z-index: 99;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.game_process__back1,
+.game_process__back2 {
+  height: 250px;
+  background-color: #2837d8;
+  position: absolute;
+  z-index: 2;
+  left: 16px; 
+  transform: rotate(-6deg);
+}
+
+.game_process__back1{
+  left: 16px;
+  transform: rotate(4deg);
 }
 
 
 
+.page__game_process .two__btn {
+  position: relative;
+  top: 0%;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page__game_process .two__btn
+.btn__circle_no{
+  width: 80px;
+  height: 80px;
+}
+.page__game_process .two__btn
+.btn__circle_no::before{
+  font-size: 40px;
+}
 
 
+.page__game_process .two__btn
+.btn__circle_yes{
+  width: 80px;
+  height: 80px;
+}
+.page__game_process .two__btn
+.btn__circle_yes::before{
+ font-size: 40px;
+}
+
+.word{
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.translate{
+  font-size: 18px;
+  text-transform: lowercase;
+}
+
+/* page__score_round*/
+
+.score_round__head{ 
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.word{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 25px;
+}
+.word .slider {
+  background-color: #ff0000;
+  border: darkred 2px solid;
+}
+.word .slider:before {
+  content: '\2716';
+  color:white;
+  top: 45%;
+}
+.word input:checked + .slider {
+  background-color: green;
+  border: darkgreen 2px solid;
+}
+.word input:checked + .slider:before {
+  content: "✔";
+  color:white;
+}
+
+
+.word p{
+  font-size: 20px;
+}
+
+.common_word{
+  padding: 15px 0px;
+}
+
+.common_word h3{
+  text-align: center;
+}
+
+.score{
+  padding: 5px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+.score span{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.page__score_round .nav{
+  padding-top: 5px;
+}
+
+/* page__cancel*/
+.cancel__form h3{
+  font-size: 20px;
+}
+.cancel__form p{
+  text-align: center;
+  font-size: 20px;
+}
+.cancel__form .two__btn{
+  top: 110px;
+}
 
